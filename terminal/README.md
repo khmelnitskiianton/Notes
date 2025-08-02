@@ -2,11 +2,26 @@
 
 Setup cool terminal. Next steps I did on Linux Mint(Debian).
 
-## Color theme
+## General
 
-Font: [Fira Code](https://github.com/tonsky/FiraCode)
+### Font
 
-I found beautiful theme [Catppuccin](https://github.com/catppuccin/) (Mocha), its plus that it has profiles for everything: xfce4-terminal, tmux, xournal, kitty, vscode and etc.
+[Fira Code](https://github.com/tonsky/FiraCode)
+
+But install `Fira Code Nerd Font` to see Powerline symbols!
+
+```shell
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+mkdir -p ~/.local/share/fonts
+unzip FiraCode.zip -d ~/.local/share/fonts/FiraCodeNerd
+fc-cache -fv
+```
+
+### Theme
+
+[Catppuccin](https://github.com/catppuccin/)
+
+Specially `Mocha`, its plus that it has profiles for everything: xfce4-terminal, tmux, xournal, kitty, vscode and etc!
 
 <img src="images/image1.png" width=40%>
 
@@ -14,7 +29,7 @@ I found beautiful theme [Catppuccin](https://github.com/catppuccin/) (Mocha), it
 
 Choose and follow readme.
 
-## Shell
+### Shell
 
 Zsh and oh-my-zsh
 
@@ -24,7 +39,7 @@ Zsh and oh-my-zsh
 
 <img src="images/image5.png" width=50%>
 
-## TMUX
+### Tmux
 
 [Tutorial](https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux)
 
@@ -34,7 +49,7 @@ Zsh and oh-my-zsh
 
 ## Terminal
 
-### XFCE4
+### xfce4
 
 My default terminal was `xfce4-terminal` - its simple and cool to setup
 
@@ -77,8 +92,19 @@ mkdir -p ~/.config/kitty/
 cp utilsC/Terminal/*.conf utilsC/Terminal/kitty-quake.sh ~/.config/kitty/
 sudo chmod ugo+x ~/.config/kitty/kitty-quake.sh
 #> make shortcut to run this script! Write full path! 
-#> like "/home/<user>/.config/kitty/kitty-quake.sh"
+#> like "/home/<user>/.config/alacritty/alacritty-quake.sh"
 ```
+
+### Alacritty
+
+Cool terminal that has many options that doesn't have xfce4 
+
+- VI mode! to use keyboard without mouse!
+- Big configuration!
+
+Install use .toml files to configure and original pages
+
+QuakeMod - also like kitty, make shortcut to run this script! Write full path `/home/<user>/.config/alacritty/alacritty-quake.sh`
 
 ### Result
 

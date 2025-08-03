@@ -97,6 +97,11 @@ sudo chmod ugo+x ~/.config/kitty/kitty-quake.sh
 
 ### Alacritty
 
+https://clux.dev/post/2023-10-01-drop-down-terminal/
+https://world.hey.com/jonash/alacritty-drop-down-guake-quake-style-terminal-setup-on-macos-6eef7d73
+https://gist.github.com/thevtm/16511e71c9b21e69088579aa8c421412
+https://clux.dev/post/2023-10-01-drop-down-terminal/
+
 Cool terminal that has many options that doesn't have xfce4 
 
 - VI mode! to use keyboard without mouse!

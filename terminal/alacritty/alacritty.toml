@@ -46,6 +46,18 @@ decorations_theme_variant = "Dark"
 
 level = "Normal"
 
+[cursor]
+
+style.shape = "Beam"
+
+vi_mode_style.shape = "Block"
+vi_mode_style.blinking = "On"
+blink_interval = 300
+
+[terminal]
+
+osc52 = "OnlyCopy"
+
 [font]
     size = 12.0
 

@@ -33,6 +33,17 @@ After creation you will have username and password in EMAIL letter. Open and sav
 
 `Data hash table of /run/log/journal/####/system.journal has a fill level` сообщения
 
+Добавить в конфиг:
+```json
+   "log": {
+      "access": "",                 
+      "error": "/var/log/xray/error.log",
+      "loglevel": "error"
+    },
+```
+
+Либо:
+
 ```bash
 nano /etc/systemd/journald.conf
 ```

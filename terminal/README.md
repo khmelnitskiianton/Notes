@@ -47,6 +47,8 @@ Zsh and oh-my-zsh
 
 [Cool plugin](https://github.com/catppuccin/tmux)
 
+[My Config with Catppuccin](tmux.conf)
+
 ## Terminal
 
 ### xfce4

@@ -1,28 +1,76 @@
 # How to VPN
 
-1. Need server to transfer traffic 
-  
-Settings: Debian 12, No ssh, IPv4
+Original guide on habr: [habr.pdf](habr.pdf) begin from 7 page
 
-+ https://hostvds.com, use MIR to pay!
+## You need
 
-You maybe need to wait until new servers appears.
+Server with Debian, IPv4 not in Russia
 
-Best locations: Netherlands, Finland, Paris.
+[How to buy it](SERVER.md)
 
-Rate: 1 dollar(cheapest), 2 dollars(for one), 4 dollars(for many)
+## Setup server
 
-After creation you will have username and password in EMAIL letter. Open and save IP, USERNAME(root), PASSWORD from it
+Connect to server from your terminal like `ssh root@100.100.100.100` and enter password. Also you have online virtual terminal on site.
 
-+ https://aeza.net/virtual-servers, use SBP
+In server's terminal do:
 
-1. Connect to server from your terminal: `ssh root@100.100.100.100` and enter password. Also you have online virtual terminal on site.
+1. `bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install` - copy this text and paste to terminal with CTRL+SHIFT+V, then Enter
 
-2. Follow guide https://habr.com/ru/articles/799751/ (open with vpn) or [pdf here](./habr.pdf). Beginning on 7th page! Before short introducing in networks
+2. Run also
 
-3. At the end of setup server and check that xray is active, you will have link `vless://` with settings of your server and e.t.c. Next download Hiddify/NekoBox or another app supports vless and load this link in it, you will have connection.
+`xray uuid` copy output to another place(select & CTRL+SHIFT+C) — сгенерирует UUID, это что‐то типа логина пользователя
 
-> Hiddify accepts only loading from buffer! You need copy link to clipboard, and then load it in hiddify.
+`xray x25519` copy output to another place(select & CTRL+SHIFT+C) — сгенерирует приватный и публичный ключ сервера
+
+3. Нужно выбрать под какой сайт вы маскироваться.
+
+- это должно быть какой‐то очень популярный иностранный сайт, желательно
+не связанный с политикой и СМИ.
+- какой‐нибудь ресурс, которым пользуются много людей и компаний, который цензоры до последнего не будет блокировать без большой нужды, чтобы не разломать пол‐интернета (и нет, это не гугл). Не обязательно использовать главный домен сайта, можно брать какие‐то из поддоменов.
+ 
+Будет что-то типа `https://www.microsoft.com` (не лучший выбор)
+
+4. Настройка конфига, файл [config.json](config.json) копируем шаблон в отдельное место
+
+И вместо полей редактируем значения на полученные до этого. Получаем содержимое которое будем вставлять далее.
+
+5. `apt install -y nano` - устанавливаем редактор кода
+
+Открываем редактор кода, команда:
+`nano /usr/local/etc/xray/config.json`
+
+Вставляем все содержимое json конфига настроенного и делаем CTRL+S, CTRL+X
+
+6. Делаем `systemctl restart xray` и если статус `active (running)` то значит все получилось
+
+7. Собираем ссылку для клиента, чтобы можно было легко и быстро добавлять
+подключение к вашему прокси на всевозможных устройствах и раздавать доступ родным и
+друзьям. Ссылка будет выглядеть так:
+
+`vless://ваш_UUID@IP_адрес_вашего_сервера:443/?encryption=none&type=tcp&sni=домен_сайта&fp=chrome&security=reality&alpn=h2&flow=xtls-rprx-vision&pbk=ваш_публичный_ключ&packetEncoding=xudp#Имя_Этого_Соединения`
+
+> Проверяем что не было переноса строки в командах и любом тексте!
+
+## Setup your device
+
+At the end of setup server and check that xray is active, you will have link `vless://` with settings of your server and e.t.c. 
+
+Next download app like Hiddify/NekoBox or another app supports vless and load this link in it, you will have connection.
+
+**Hiddify accepts only loading from buffer! You need copy link to clipboard, and then load it in hiddify.**
+
+> При первом запуске он предлагает выбрать страну, и если вы выберете Россию, то
+автоматически применятся правила, направляющие трафик до иностранных ресурсов через ваш
+прокси, а до российских сайтов — напрямую, ничего дополнительно настраивать не надо. А если
+вы выберете "Другое", то на прокси пойдет весь ваш трафик.
+
+This link can be used on any devices with app for vless.
+
+Example with Hiddify:
+
+![alt text](image.png)
+
+*****
 
 ## Возможные проблемы
 
@@ -32,15 +80,6 @@ After creation you will have username and password in EMAIL letter. Open and sav
 1. Переполнение логов
 
 `Data hash table of /run/log/journal/####/system.journal has a fill level` сообщения
-
-Добавить в конфиг:
-```json
-   "log": {
-      "access": "",                 
-      "error": "/var/log/xray/error.log",
-      "loglevel": "error"
-    },
-```
 
 Либо:
 

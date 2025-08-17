@@ -65,7 +65,12 @@ Next download app like Hiddify/NekoBox or another app supports vless and load th
 прокси, а до российских сайтов — напрямую, ничего дополнительно настраивать не надо. А если
 вы выберете "Другое", то на прокси пойдет весь ваш трафик.
 
-This link can be used on any devices with app for vless.
+Теперь для своего любого устройства скачиваем приложение, вставляем ссылку из буффера и все!
+
+> Для андроид приставок(без нормального копирования в буффер) работает так: 
+> 1. Ставим на приставку приложение [Take Notes](https://play.google.com/store/apps/details?id=io.github.visnkmr.kagaz)
+> 2. Либо вводим руками либо Remote Control с телефона управляем приставкой отаправляя текст с ссылкой
+> 3. Далее выделяем и Copy Text - все скопировали! Теперь осталось вставить в hiddify
 
 Example with Hiddify:
 

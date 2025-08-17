@@ -69,8 +69,8 @@ Next download app like Hiddify/NekoBox or another app supports vless and load th
 
 > Для андроид приставок(без нормального копирования в буффер) работает так: 
 > 1. Ставим на приставку приложение [Take Notes](https://play.google.com/store/apps/details?id=io.github.visnkmr.kagaz)
-> 2. Либо вводим руками либо Remote Control с телефона управляем приставкой отаправляя текст с ссылкой
-> 3. Далее выделяем и Copy Text - все скопировали! Теперь осталось вставить в hiddify
+> 2. Либо вводим руками либо Remote Control с телефона управляем приставкой вставляя в Take Notes текст с ссылкой
+> 3. Далее отправляем, выделяем и Copy Text - все скопировали! Теперь осталось вставить в hiddify
 
 Example with Hiddify:
 

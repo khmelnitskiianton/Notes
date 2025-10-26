@@ -14,7 +14,9 @@ Connect to server from your terminal like `ssh root@100.100.100.100` and enter p
 
 In server's terminal do:
 
-1. `bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install` - copy this text and paste to terminal with CTRL+SHIFT+V, then Enter
+1. `bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version v25.8.3` - copy this text and paste to terminal with CTRL+SHIFT+V, then Enter
+
+> after v25.8.3 `xray x255219` - gives private password and hash - idk why
 
 2. Run also
 

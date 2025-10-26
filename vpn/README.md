@@ -50,7 +50,9 @@ In server's terminal do:
 подключение к вашему прокси на всевозможных устройствах и раздавать доступ родным и
 друзьям. Ссылка будет выглядеть так:
 
-`vless://ваш_UUID@IP_адрес_вашего_сервера:443/?encryption=none&type=tcp&sni=домен_сайта&fp=chrome&security=reality&alpn=h2&flow=xtls-rprx-vision&pbk=ваш_публичный_ключ&packetEncoding=xudp#Имя_Этого_Соединения`
+```text
+vless://ваш_UUID@IP_адрес_вашего_сервера:443/?encryption=none&type=tcp&sni=домен_сайта&fp=chrome&security=reality&alpn=h2&flow=xtls-rprx-vision&pbk=ваш_публичный_ключ&packetEncoding=xudp#Имя_Этого_Соединения
+```
 
 > Проверяем что не было переноса строки в командах и любом тексте!
 
